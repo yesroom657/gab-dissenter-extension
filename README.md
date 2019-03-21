@@ -149,3 +149,13 @@ $ npm run build
 ```
 
 During the build process, all of the code in the `./src` directory is compiled into the `./build` directory. The `./build` directory will contain folders named after each of the `Browser` class `slug` (`browser.slug` ... i.e. `chrome`, `firefox`, etc.). Each of the folders contain browser specific extension code formatted in a specific way that is read by the main `manifest.json` in each of the folder's directories. For example, the `popup`, `images`, `background` and other related `manifest.json` keys are transfered from the `./src` directory into the `./build/*` folders.
+
+# • Fork Notes
+
+The purpose of this fork is to add new features:
+
+| Feature | Status | Description |
+| --- | --- | --- |
+| Archiving | In Development | To add the ability to either query archived verions of the page or create an archive version using third party sites such as archive.is |
+| Corroberation | In Development | To add the ability to link other sites that will either validate or dispute the argument on the page |
+| Link Author/Site Metric | In Development | To add the ability to reference third party metadata on either the author of an artical or the site hosting it |
