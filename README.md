@@ -145,7 +145,7 @@ $ npm run gulp:images
 You can also run all of them at once using the gulp `build` function:
 
 ```
-$ npm run build
+$ npm build
 ```
 
 During the build process, all of the code in the `./src` directory is compiled into the `./build` directory. The `./build` directory will contain folders named after each of the `Browser` class `slug` (`browser.slug` ... i.e. `chrome`, `firefox`, etc.). Each of the folders contain browser specific extension code formatted in a specific way that is read by the main `manifest.json` in each of the folder's directories. For example, the `popup`, `images`, `background` and other related `manifest.json` keys are transfered from the `./src` directory into the `./build/*` folders.
