@@ -156,6 +156,6 @@ The purpose of this fork is to add new features:
 
 | Feature | Status | Description |
 | --- | --- | --- |
-| Archiving | In Development | To add the ability to either query archived verions of the page or create an archive version using third party sites such as archive.is |
+| Archiving | Complete | To add the ability to either query archived verions of the page or create an archive version using third party sites such as archive.is |
 | Corroberation | In Development | To add the ability to link other sites that will either validate or dispute the argument on the page |
 | Link Author/Site Metric | In Development | To add the ability to reference third party metadata on either the author of an artical or the site hosting it |

@@ -7,7 +7,7 @@ var Popup = function() {
     var scope = this;
 
     //Elements
-    var iframe = document.getElementById('popup-iframe');
+    scope.iframe = document.getElementById('popup-iframe');
 
     var currentActiveUrl = '';
 
@@ -32,15 +32,15 @@ var Popup = function() {
         currentActiveUrl = url;
 
         //Encode current tab url along with base dissenter.com url
-        var encoded = encodeURIComponent(url);
-        var commentUrl = BASE_URI + encoded;
+        scope.encoded = encodeURIComponent(url);
+        scope.commentUrl = BASE_URI + scope.encoded;
 
         //Show iframe after delay
         setTimeout(function() {
             //Set src, make visible
-            iframe.setAttribute('src', commentUrl);
-            iframe.classList.remove('hidden');
-        }, 250);
+            scope.iframe.setAttribute('src', scope.commentUrl);
+            scope.iframe.classList.remove('hidden');
+        }, 400);
     };
 
     /**
@@ -99,13 +99,22 @@ else {
     /**
      * @description - On popup load
      */
+// 
     document.addEventListener('DOMContentLoaded', function() {
         //Check if there's an incoming query string for the url
         //E.g. from content scripts, using a popup window
         var url = getQueryStringValue('url');
-
-        //Create and init Popup
         var popup = new Popup();
         popup.init(url);
+	   
+	     document.getElementById("archive-nav-btn").addEventListener("click", function(){
+	        popup.iframe.setAttribute('src','http://archive.is/' + popup.encoded);
+
+	     });
+
+	     document.getElementById("dissenter-nav-btn").addEventListener("click", function(){
+	        popup.iframe.setAttribute('src', popup.commentUrl);
+	     });
+        //Create and init Popup
     });
 }
